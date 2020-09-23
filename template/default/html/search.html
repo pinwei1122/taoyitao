@@ -1,0 +1,37 @@
+{include file=head.html}
+	<div style="clear:both;"></div>
+	<!--contemt-->
+	<div id="products">
+		<div class="products">
+			<div class="products_kuan">
+				<div class="products_left">
+					<div class="products_bt">
+						<h4>SEARCH</h4>
+					</div>
+					{pboot:nav parent={sort:tcode}}
+					<div class="products_lanmu"><a href="[nav:link]" class="leftarricon {pboot:if([nav:scode]=={sort:scode})}po{/pboot:if}" title="[nav:name]">[nav:name]</a></div>
+					{/pboot:nav}
+				</div>
+				<div class="products_right">
+				{include file=pos.html}
+					<div class="products_cp">
+						<div style="width:95%; margin:10px auto; color:#cccccc;">
+							{pboot:search num='10'} 
+							<div
+								style="border-bottom:1px #CCCCCC dashed; line-height:19px; height:19px; margin:5px 0px;">
+								<div style="width:85%; float:left; text-align:left;"><a
+										href="[search:link]" target="_blank" title="[search:title]"
+										style="color:#cccccc;"> [search:title]</a></div>
+								<div style="width:80px; float:right; text-align:left;">[[search:date style=Y-m-d]]</div>
+							</div>
+							{/pboot:search}
+							<div class="clear"></div>
+						</div>
+						{include file=page.html}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{include file=foot.html}

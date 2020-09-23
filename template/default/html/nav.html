@@ -1,0 +1,10 @@
+<ul class="class_list">
+    {pboot:nav parent={sort:tcode}}
+    <li><a href="[nav:link]" {pboot:if([nav:scode]=={sort:scode})}class="on"{/pboot:if}>[nav:name]</a></li>
+    {/pboot:nav}
+    {pboot:nav parent=0}
+    {pboot:if([nav:scode]=={sort:scode}&&[nav:soncount]==0)}
+    <li><a href="[nav:link]" class="on">[nav:name]</a></li>
+    {/pboot:if}
+    {/pboot:nav}
+</ul>

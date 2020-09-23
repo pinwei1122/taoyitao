@@ -1,0 +1,40 @@
+﻿{include file=head.html}
+{include file=banner.html}
+
+<!-- 图标导航 -->
+<div class="product sub_pro">
+	<!--left-->
+	<!--left end-->
+	<div class="product03">
+		{include file=pos.html}
+		<div class="content">
+			<div class="view">
+				<h1 class="view-title">{content:title}</h1>
+				<div class="view-date">
+					<span>发布时间：{content:date style=Y/m/d}</span>
+				</div>
+				<div class="bshare-custom view-share"><a title="更多平台"
+						class="bshare-more bshare-more-icon more-style-addthis"></a><a title="分享到QQ空间"
+						class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网"
+						class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博"
+						class="bshare-neteasemb"></a></div>
+				<script type="text/javascript" charset="utf-8" src="static/js/buttonlite.js"></script>
+				<script type="text/javascript" charset="utf-8" src="static/js/bsharec0.js"></script>
+				<center><img src="{content:ico}" alt="{content:title}" /></center>
+				<table>
+				</table>
+				<br />
+				{content:content}
+			</div>
+
+			<div class="page">
+				<p><a href="{content:prelink}" class="page">上一条：{content:pretitle}</a></p>
+				<p><a href="{content:nextlink}" class="page">下一条：{content:nexttitle}</a></p>
+				<a href="{sort:link}" title="返回列表" class="back theme_color">返回列表</a>
+
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+{include file=foot.html}

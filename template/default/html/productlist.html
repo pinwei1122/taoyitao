@@ -1,0 +1,29 @@
+{include file=head.html}
+	<div style="clear:both;"></div>
+	<!--contemt-->
+	<div id="products">
+		<div class="products">
+			<div class="products_kuan">
+				{include file=left1.html}	
+				<div class="products_right">
+					{include file=pos.html}
+					<div class="products_cp">
+						{pboot:list num='12'} 
+						<div {pboot:if([list:i]%4==1)}class="cp_tu" {else}class="cp_tu_1" {/pboot:if} >
+							<a href="[list:link]" target="_blank" title="[list:title]"
+								charset="product_kuang_a"><img src="[list:ico]" width="204" />
+								<p>[list:title]</p>
+							</a>
+						</div>
+						{/pboot:list}
+
+						<div style=" clear:both;"></div>
+						{include file=page.html}
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{include file=foot.html}

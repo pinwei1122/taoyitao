@@ -1,0 +1,123 @@
+{include file=head.html}
+	<div style="clear:both;"></div>
+	<!--contemt-->
+	<div id="products">
+		<div class="products">
+			<div class="products_kuan">
+				{include file=left1.html}
+				<div class="products_right">
+					{include file=pos.html}
+					<div class="products_cp">
+						<div class="products_cp_shang">
+
+							<div class="products_cp_tu">
+								<div>
+									<a href="{content:ico}" class="MagicZoom" id="zoom1">
+									<img src="{content:ico}" id="bigpic" width="370"></a>
+								</div>
+								<div class="products_cp_fujia">
+
+									<div class="dis_append">
+										<div class="dis_pro_append_content">
+											<div class="dis_pro_append_list">
+												<ul>
+													{pboot:pics id={content:id}}
+													<li style="margin-left:25;"><a
+															href="javascript:;"
+															rel="zoom1"
+															rev="[pics:src]"
+															title="BAJAJ-BOXER"><img
+																src="[pics:src]"
+																height="69"
+																/></a>
+													</li>
+													{/pboot:pics}
+												</ul>
+											</div>
+											<a href="javascript:void(0)" class="e_prev"></a>
+											<a href="javascript:void(0)" class="e_next"></a>
+										</div>
+										<script language="javascript">
+
+											$(function () {
+
+												$(".dis_pro_append_list li").click(function () {
+													var img = $(this).find("img").attr("src");
+													$("#bigpic").attr("src", img);
+												});
+
+											})
+
+										</script>
+
+										<script language="javascript">
+
+											var ind_banner_btn_leng = $(".dis_pro_append_list li").length;
+											var banner_btn_list_width = $(".dis_pro_append_list li").width() + 12;
+											$(".dis_pro_append_list ul").css("width", ind_banner_btn_leng * banner_btn_list_width + "px");
+											var ind = 0;
+											var ind_move = banner_btn_list_width;
+											var move_banner_btn_leng = ind_banner_btn_leng - 4;
+
+											$(".e_prev").click(function () {
+
+												ind--;
+
+												if (ind < 0) { ind = 0; return false; }
+
+												$(".dis_pro_append_list ul").animate({ "left": "+=" + ind_move + "px" }, 400);
+
+											});
+
+											$(".e_next").click(function () {
+
+												ind++;
+
+												if (ind > move_banner_btn_leng) { ind = move_banner_btn_leng; return false; }
+
+												$(".dis_pro_append_list ul").animate({ "left": "-=" + ind_move + "px" }, 400);
+											});
+
+										</script>
+
+
+									</div>
+								</div>
+							</div>
+							<div class="products_cp_tu_right">
+								<div class="products_cp_tu_bt">
+									<div style=" min-height:25px; height:100%; float:left; width:2%;"></div>
+									<div style="float:left; width:95%; padding-top:10px;">{content:title}</div>
+								</div>
+								{content:content}
+							</div>
+						</div>
+						<div style="clear:both;"></div>
+						<div class="products_cp_xia">
+							<div class="products_cp_xia_bt">Recommended Products</div>
+							{pboot:list scode='{sort:tcode}' num='4'} 
+							<div class="products_cp_xia_tu_1">
+								<a href="[list:link]" title="110-ENGINE" target="_blank"><img
+										src="[list:ico]" width="192" height="191"
+										style="border:solid 0px; top: 0px; " />
+									<p>110-ENGINE</p>
+								</a>
+							</div>
+							{/pboot:list}
+
+						</div>
+						<div style="clear:both;"></div>
+						<div style=" text-align:center; margin:10px auto; ">
+							<font style="cursor:hand" onClick=javascript:window.close()><strong
+									style="text-align:right; cursor:pointer;">【Close】</strong></font><br />
+						</div>
+					</div>
+					<div style="clear:both;"></div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<div style="clear:both;"></div>
+	{include file=foot.html}

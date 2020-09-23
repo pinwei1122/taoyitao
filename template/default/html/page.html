@@ -1,0 +1,13 @@
+<div style=" text-align:center; margin:0px auto; margin:20px 0px;">
+    <a class="" color="" href="{page:index}">First</a> &nbsp;&nbsp;
+    <a class="" color="" href="{page:pre}">Previous</a> &nbsp;&nbsp;
+    <a href="{page:next}" class=""><font color="">Next</font></a> &nbsp;&nbsp;
+    <a href="{page:last}" class=""><font color="">Last</font></a>&nbsp;&nbsp;
+    <font class="" color="">[1/12]</font> &nbsp;&nbsp;
+    <select name="pageIndex1" id="pageIndex1"
+        onchange="javascript:location.href='/?list_{sort:scode}_'+this.options[selectedIndex].value+'/'">
+        {pboot:loop start=1 end={page:count}}
+        <option value="[loop:i]" {pboot:if([loop:i]=={page:current})}selected{/pboot:if}>[loop:i]</option>
+        {/pboot:loop}
+    </select>
+</div>
